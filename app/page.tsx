@@ -4,6 +4,7 @@ import MonthlySpecials from "./components/MonthlySpecials";
 import DailyCupcakesCarousel from "./components/DailyCupcakesCarousel";
 import IceCreamCarousel from "./components/IceCreamCarousel";
 import ScrollDownButton from "./components/ScrollDownButton";
+import VideoSlider from "./components/VideoSlider";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,11 +16,6 @@ const pressLogos = [
   { src: "/assets/client-5.webp", alt: "Press feature 5" },
 ];
 
-const socialVideos = [
-  "https://player.vimeo.com/video/1082917001?autoplay=1&muted=1&background=1&playsinline=1",
-  "https://player.vimeo.com/video/1082915543?autoplay=1&muted=1&background=1&playsinline=1",
-  "https://player.vimeo.com/video/1082915703?autoplay=1&muted=1&background=1&playsinline=1",
-];
 
 export default function Home() {
   return (
@@ -48,7 +44,10 @@ export default function Home() {
             />
           </div>
           <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 text-center px-4 max-w-[960px] mx-auto">
+
+        
+
+          <div className="relative z-10 text-center max-w-[960px] mx-auto">
             {/* Award badge */}
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up"
               style={{ background: "rgba(253,230,242,0.15)", border: "1px solid rgba(253,230,242,0.35)", backdropFilter: "blur(6px)" }}>
@@ -97,6 +96,20 @@ export default function Home() {
 
             <ScrollDownButton />
           </div>
+
+          {/* Scalloped bottom edge transitions into the next section */}
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 1440 56"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", zIndex: 20, pointerEvents: "none", display: "block" }}
+          >
+            <path
+              d="M0,56 L0,28 Q36,0 72,28 Q108,0 144,28 Q180,0 216,28 Q252,0 288,28 Q324,0 360,28 Q396,0 432,28 Q468,0 504,28 Q540,0 576,28 Q612,0 648,28 Q684,0 720,28 Q756,0 792,28 Q828,0 864,28 Q900,0 936,28 Q972,0 1008,28 Q1044,0 1080,28 Q1116,0 1152,28 Q1188,0 1224,28 Q1260,0 1296,28 Q1332,0 1368,28 Q1404,0 1440,28 L1440,56 Z"
+              fill="white"
+            />
+          </svg>
         </section>
 
         {/* ─── HANDCRAFTED TREATS INTRO ──────────────────────────── */}
@@ -165,7 +178,7 @@ export default function Home() {
           The card itself has no overflow-hidden so photos bleed past its edges.
         */}
         <section className="py-10 md:py-14 bg-white" style={{ overflowX: "hidden" }}>
-          <div className="max-w-[1100px] mx-auto px-4 ">
+          <div className="max-w-[1100px] mx-auto px-4 md:px-0">
             <div
               className="relative rounded-2xl"
               style={{
@@ -181,7 +194,7 @@ export default function Home() {
                   <h2 className="cate mb-1">Catering &amp; Custom Treats</h2>
                   <p className="for-every mb-6">For Every Celebration</p>
                   <p
-                    className="font-raleway text-white leading-relaxed max-w-[400px]"
+                    className="font-raleway text-white leading-relaxed max-w-[600px]"
                     style={{ color: "#ffffff", fontWeight: 600, fontSize: "17px" }}
                   >
                     From corporate events to birthdays and weddings, our
@@ -239,11 +252,18 @@ export default function Home() {
         </section>
 
         {/* ─── SOCIAL MEDIA ─────────────────────────────────────── */}
-        <section className="py-16 md:py-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.60), rgba(255,255,255,0.60)), url('/assets/fondo_socials.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
-          <div className="max-w-[1100px] mx-auto px-4">
+        <section className="relative pt-28 pb-28 md:pt-32 md:pb-32" style={{ backgroundImage: "url('/assets/fondo_rosado2.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+
+          {/* Cloud top divider */}
+          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
+            <path d="M0,0 L1440,0 L1440,45 Q1400,70 1360,45 Q1320,70 1280,45 Q1240,65 1200,45 Q1160,70 1120,45 Q1080,65 1040,45 Q1000,70 960,45 Q920,65 880,45 Q840,70 800,45 Q760,65 720,45 Q680,70 640,45 Q600,65 560,45 Q520,70 480,45 Q440,65 400,45 Q360,70 320,45 Q280,65 240,45 Q200,70 160,45 Q120,65 80,45 Q40,70 0,45 Z" fill="white"/>
+          </svg>
+
+          <div className="max-w-[1100px] mx-auto px-4 md:px-0">
             <div className="text-center mb-10">
               <h2 className="leading-tight mb-2">
-                <span className="follow">Follow Us on </span>
+                <span className="follow">Follow Us on </span> <br></br>
                 <span className="social">Social Media</span>
               </h2>
               <div className="flex justify-center mb-4">
@@ -255,51 +275,21 @@ export default function Home() {
               </div>
               <p
                 className="font-raleway text-[15px] font-medium max-w-[500px] mx-auto leading-relaxed"
-                style={{ color: "#276477" }}
+                style={{ color: "#87143D" }}
               >
                 Follow us for the latest flavors, exclusive treats, and
                 behind-the-scenes moments.
               </p>
             </div>
 
-            {/* Portrait video grid — center taller, sides shorter, all centered vertically */}
-            <div className="flex items-center justify-center gap-4 mb-10">
-              {[
-                { url: socialVideos[0], w: 200, h: 355 },
-                { url: socialVideos[1], w: 225, h: 430 },
-                { url: socialVideos[2], w: 200, h: 355 },
-              ].map(({ url, w, h }, i) => (
-                <div
-                  key={i}
-                  className="relative flex-shrink-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-                  style={{ width: `${w}px`, height: `${h}px`, outline: "2px solid rgba(227,41,115,0.15)", outlineOffset: "3px" }}
-                >
-                  <iframe
-                    src={url}
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      width: "177.78%",
-                      height: "177.78%",
-                      minWidth: "100%",
-                      minHeight: "100%",
-                      border: "none",
-                    }}
-                    allow="autoplay; fullscreen"
-                    title={`Social video ${i + 1}`}
-                  />
-                </div>
-              ))}
-            </div>
+            <VideoSlider />
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="https://www.instagram.com/smallcakessnellville/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 font-raleway font-bold text-[15px] px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 font-raleway font-bold text-[15px] px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                 style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", color: "#F8FAFC", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -311,7 +301,7 @@ export default function Home() {
                 href="https://www.tiktok.com/@smallcakesgwinnett"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 font-raleway font-bold text-[15px] px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 font-raleway font-bold text-[15px] px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                 style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", color: "#F8FAFC", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -321,12 +311,17 @@ export default function Home() {
               </a>
             </div>
           </div>
+
+          {/* Cloud bottom divider */}
+          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
+            <path d="M0,70 L1440,70 L1440,25 Q1400,0 1360,25 Q1320,0 1280,25 Q1240,5 1200,25 Q1160,0 1120,25 Q1080,5 1040,25 Q1000,0 960,25 Q920,5 880,25 Q840,0 800,25 Q760,5 720,25 Q680,0 640,25 Q600,5 560,25 Q520,0 480,25 Q440,5 400,25 Q360,0 320,25 Q280,5 240,25 Q200,0 160,25 Q120,5 80,25 Q40,0 0,25 Z" fill="white"/>
+          </svg>
         </section>
 
         {/* ─── APP DOWNLOAD ──────────────────────────────────────── */}
-        {/* White outer bg; card uses banner_rojo.webp; phone overflows card top */}
         <section className="bg-white" style={{ paddingTop: "80px", paddingBottom: "56px", overflowX: "hidden" }}>
-          <div className="max-w-[1100px] mx-auto px-4 ">
+          <div className="max-w-[1100px] mx-auto px-4 md:px-0">
             <div
               className="relative rounded-3xl"
               style={{
@@ -338,8 +333,19 @@ export default function Home() {
               <div className="absolute inset-0 rounded-3xl" style={{ background: "rgba(100, 10, 38, 0.84)" }} />
 
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-[55%_45%] gap-0">
-                {/* Left: text */}
-                <div className="px-8 md:px-14 py-12 md:py-16 flex flex-col justify-center">
+                {/* Phone — first on mobile (top), right column on desktop */}
+                <div className="order-first md:order-last relative flex items-center md:items-end justify-center pt-8 pb-2 md:pt-0 md:pb-8" style={{ overflow: "visible" }}>
+                  <Image
+                    src="/assets/mockup_app.webp"
+                    alt="Smallcakes mobile app"
+                    width={420}
+                    height={520}
+                    className="object-contain drop-shadow-2xl md:-mt-20 max-h-[260px] md:max-h-[520px] w-auto"
+                  />
+                </div>
+
+                {/* Text + buttons — second on mobile, left column on desktop */}
+                <div className="order-last md:order-first px-6 md:px-14 py-8 md:py-16 flex flex-col justify-center">
                   <h2 className="leading-snug mb-5">
                     <span className="app block">Download the App</span>
                     <span className="appp block">And Sweeten Your Day</span>
@@ -391,26 +397,14 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-
-                {/* Right: phone overflows card top */}
-                <div className="relative flex items-end justify-center pb-8" style={{ overflow: "visible" }}>
-                  <Image
-                    src="/assets/mockup_app.webp"
-                    alt="Smallcakes mobile app"
-                    width={420}
-                    height={520}
-                    className="object-contain drop-shadow-2xl"
-                    style={{ marginTop: "-80px", maxHeight: "520px", width: "auto" }}
-                  />
-                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ─── LOCATIONS ────────────────────────────────────────── */}
-        <section className="py-16 md:py-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('/assets/fondo_1.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
-          <div className="max-w-[1100px] mx-auto px-4">
+        <section id="locations" className="py-16 md:py-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('/assets/fondo_1.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+          <div className="max-w-[1100px] mx-auto px-4 md:px-0">
 
             {/* Header: large icon + two-line title */}
             <div className="text-center mb-12">
@@ -441,18 +435,22 @@ export default function Home() {
                   alt: "Snellville location",
                   city: "Snellville",
                   address: "The Shoppes at Webb Gin, 1350 Scenic Hwy N Ste 824, Snellville, GA",
+                  addressNoWrap: false,
                   phone: "770-864-1984",
                   tel: "tel:7708641984",
                   maps: "https://maps.app.goo.gl/26KwMPiVgXg9QjCP6",
+                  hours: ["Mon: Closed", "Tue–Sat: 11am – 8pm", "Sun: 12pm – 6pm"],
                 },
                 {
                   img: "/assets/location_buford.webp",
                   alt: "Buford location",
                   city: "Buford",
                   address: "The Exchange at Gwinnett, 2925 Buford Dr Ste 1220, Buford, GA",
+                  addressNoWrap: false,
                   phone: "770-224-8033",
                   tel: "tel:7702248033",
                   maps: "https://maps.app.goo.gl/PoD4RbJCaJXX96ho6",
+                  hours: ["Mon: Closed", "Tue–Thu: 11am – 8pm", "Fri–Sat: 11am – 9pm", "Sun: 12pm – 6pm"],
                 },
               ].map((loc) => (
                 <div key={loc.city} className="flex flex-col rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-brand-light group">
@@ -479,15 +477,15 @@ export default function Home() {
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                       </svg>
                       <span
-                        className="font-raleway font-bold"
-                        style={{ fontSize: "14px", fontWeight: 700, color: "#9F363A", lineHeight: "1.6" }}
+                        className={`font-raleway font-bold${loc.addressNoWrap ? " whitespace-nowrap" : ""}`}
+                        style={{ fontSize: "13px", fontWeight: 700, color: "#9F363A", lineHeight: "1.6" }}
                       >
                         {loc.address}
                       </span>
                     </div>
 
                     {/* Phone with icon */}
-                    <div className="flex items-center gap-2 mb-5">
+                    <div className="flex items-center gap-2 mb-2">
                       <svg className="w-4 h-4 shrink-0" style={{ color: "#E32973" }} fill="currentColor" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                       </svg>
@@ -498,6 +496,20 @@ export default function Home() {
                       >
                         {loc.phone}
                       </a>
+                    </div>
+
+                    {/* Hours */}
+                    <div className="flex items-start gap-2 mb-5">
+                      <svg className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#E32973" }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div className="flex flex-col gap-0.5">
+                        {loc.hours.map((h) => (
+                          <span key={h} className="font-raleway font-bold" style={{ fontSize: "13px", color: "#9F363A", lineHeight: "1.5" }}>
+                            {h}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
                     <a
@@ -528,7 +540,7 @@ export default function Home() {
             backgroundPosition: "center",
           }}
         >
-          <div className="max-w-[1100px] mx-auto px-4">
+          <div className="max-w-[1100px] mx-auto px-4 md:px-0">
 
             {/* Title with circular dot decorations */}
             <div className="flex flex-col items-center gap-3 mb-8">
@@ -567,7 +579,7 @@ export default function Home() {
         {/* ─── PRESS / BUZZ ─────────────────────────────────────── */}
         <section className="py-14 md:py-16 bg-white">
           {/* Title — centered, constrained */}
-          <div className="max-w-[1100px] mx-auto px-4 mb-10 flex flex-col items-center gap-3">
+          <div className="max-w-[1100px] mx-auto mb-10 px-4 md:px-0 flex flex-col items-center gap-3">
             <h2
               className="font-boorsok font-normal text-brand uppercase text-center"
               style={{ fontSize: "clamp(28px, 4vw, 38px)", lineHeight: "1.1" }}

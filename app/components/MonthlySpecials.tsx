@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { supabase, supabaseClientId } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
+import { classifyMenuCategories } from "@/lib/menuCategories";
 import Link from "next/link";
 
 interface FlatItem {
@@ -8,73 +9,37 @@ interface FlatItem {
   name: string;
   description: string | null;
   image_url: string | null;
-  categoryName: string;
   tag: string | null;
 }
 
 export default function MonthlySpecials() {
   const [items, setItems] = useState<FlatItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchSpecials() {
-      const { data: allMenus, error: menusError } = await supabase
-        .from("menus")
-        .select("id, name, sort_order")
-        .eq("restaurant_id", supabaseClientId)
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true });
+      const { monthlyCatIds } = await classifyMenuCategories();
+      if (monthlyCatIds.length === 0) { setLoading(false); return; }
 
-      if (menusError || !allMenus || allMenus.length === 0) {
-        setHasError(true);
-        setLoading(false);
-        return;
-      }
-
-      const monthlyMenu =
-        allMenus.find((m) =>
-          m.name.toLowerCase().includes("monthly") ||
-          m.name.toLowerCase().includes("special")
-        ) ?? allMenus[0];
-
-      const { data: cats, error: catsError } = await supabase
-        .from("menu_categories")
-        .select("id, name, sort_order")
-        .eq("menu_id", monthlyMenu.id)
-        .order("sort_order", { ascending: true });
-
-      if (catsError || !cats || cats.length === 0) {
-        setHasError(true);
-        setLoading(false);
-        return;
-      }
-
-      const { data: menuItems } = await supabase
+      const { data } = await supabase
         .from("menu_items")
         .select("id, category_id, name, description, image_url, sort_order, tags")
-        .in("category_id", cats.map((c) => c.id))
+        .in("category_id", monthlyCatIds)
         .eq("is_active", true)
         .order("sort_order", { ascending: true });
 
-      const flat: FlatItem[] = cats.flatMap((cat) =>
-        (menuItems ?? [])
-          .filter((item) => item.category_id === cat.id)
-          .map((item) => ({
-            id: item.id,
-            name: item.name,
-            description: item.description,
-            image_url: item.image_url,
-            categoryName: cat.name,
-            tag: item.tags ? String(item.tags).split(",")[0].trim() : null,
-          }))
+      setItems(
+        (data ?? []).map((item) => ({
+          id: item.id,
+          name: item.name,
+          description: item.description,
+          image_url: item.image_url,
+          tag: item.tags ? String(item.tags).split(",")[0].trim() : null,
+        }))
       );
-
-      setItems(flat);
       setLoading(false);
     }
-
     fetchSpecials();
   }, []);
 
@@ -103,7 +68,7 @@ export default function MonthlySpecials() {
     );
   }
 
-  if (hasError || items.length === 0) return null;
+  if (items.length === 0) return null;
 
   return (
     <section className="py-16 md:py-20 bg-white">
@@ -129,12 +94,12 @@ export default function MonthlySpecials() {
 
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2"
+            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2 snap-x snap-mandatory"
           >
             {items.map((item) => (
               <div
                 key={item.id}
-                className="flex-none w-[210px] md:w-[270px] text-center"
+                className="flex-none w-[calc(100vw-6rem)] md:w-[270px] text-center snap-start"
               >
                 <div className="mb-3">
                   {item.image_url ? (
@@ -157,9 +122,11 @@ export default function MonthlySpecials() {
                 >
                   {item.name}
                 </h3>
-                <span className="inline-block text-[12px] font-raleway font-bold text-aqua-dark bg-aqua-light px-3 py-1 rounded-full">
-                  {item.tag ?? item.categoryName}
-                </span>
+                {item.tag && (
+                  <span className="inline-block text-[12px] font-raleway font-bold text-aqua-dark bg-aqua-light px-3 py-1 rounded-full">
+                    {item.tag}
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -175,7 +142,7 @@ export default function MonthlySpecials() {
 
         <div className="text-center mt-10">
           <Link
-            href="/menu"
+            href="/menu?tab=monthly"
             className="inline-flex items-center gap-2 text-[#F8FAFC] font-raleway font-bold text-[16px] capitalize rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", padding: "12px 32px", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
           >

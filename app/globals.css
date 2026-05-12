@@ -52,23 +52,41 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-VariableFont_wght.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff') format('woff');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme inline {
   --font-guttery: 'Guttery', cursive;
   --font-boorsok: 'Boorsok', cursive;
   --font-raleway: 'Raleway', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
 
+  /* Primary palette — Brandbook p.16 */
   --color-brand: #E32973;
-  --color-brand-dark: #A21245;
-  --color-brand-text: #87143D;
+  --color-brand-dark: #571D1F;
   --color-brand-medium: #C41254;
-  --color-brand-light: #FDE6F2;
+  --color-brand-deep: #B90B50;
+  --color-brand-text: #87143D;
+  --color-buttercream: #F19EBD;
+  --color-brand-light: #FFCDE0;
   --color-brand-soft: #FBE8F0;
+}
 
-  --color-aqua: #2E96AC;
-  --color-aqua-dark: #276477;
-  --color-aqua-deeper: #142D38;
-  --color-aqua-light: #D8F1F5;
-  --color-aqua-pale: #F0FBFB;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -165,7 +183,6 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 34.8px;
-  text-transform: uppercase;
 }
 .for-every {
   color: #276477;
@@ -187,21 +204,24 @@ body {
 
 /* ── Social Media heading ── */
 .follow {
-  color: #4AB3C6;
+  color: #E32973;
   font-family: 'Boorsok', cursive;
   font-size: 42px;
   font-weight: 400;
   line-height: 39px;
-  text-shadow: 0px 3.5px 10.5px rgba(182, 229, 235, 0.30);
-  -webkit-text-stroke-width: 0px;
+  text-shadow: 0px 3.5px 10.5px rgba(227, 41, 115, 0.25);
+  -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: #FFF;
 }
 .social {
-  color: #2E96AC;
+  color: #C41254;
   font-family: 'Boorsok', cursive;
   font-size: 42px;
   font-weight: 400;
   line-height: 39px;
+  text-shadow: 0px 3.5px 10.5px rgba(196, 18, 84, 0.20);
+  -webkit-text-stroke-width: 1.0px;
+  -webkit-text-stroke-color: #FFF;
 }
 @media (max-width: 768px) {
   .follow, .social { font-size: 29px; }
@@ -271,3 +291,29 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 .delay-600 { animation-delay: 600ms; }
+
+/* ── Polka-dot section backgrounds ── */
+.bg-dots-pink {
+  background-color: #fff0f6;
+  background-image: radial-gradient(circle, rgba(227,41,115,0.16) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.bg-dots-white {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, rgba(241,158,189,0.28) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.6); }
+  70%  { transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes drift {
+  0%, 100% { transform: translateY(0px)   translateX(0px); }
+  33%       { transform: translateY(-10px) translateX(6px); }
+  66%       { transform: translateY(5px)   translateX(-5px); }
+}
+
+.animate-pop-in { animation: pop-in 0.5s ease-out both; }
+.animate-drift  { animation: drift 7s ease-in-out infinite; }

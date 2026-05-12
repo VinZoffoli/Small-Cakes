@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { supabase, supabaseClientId } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
+import { classifyMenuCategories } from "@/lib/menuCategories";
 import Link from "next/link";
 
 interface MenuItem {
@@ -17,43 +18,17 @@ export default function DailyCupcakesCarousel() {
 
   useEffect(() => {
     async function fetchItems() {
-      const { data: allMenus } = await supabase
-        .from("menus")
-        .select("id, name, sort_order")
-        .eq("restaurant_id", supabaseClientId)
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true });
+      const { dailyCatIds } = await classifyMenuCategories();
+      if (dailyCatIds.length === 0) { setLoading(false); return; }
 
-      if (!allMenus || allMenus.length === 0) { setLoading(false); return; }
-
-      // Find monthly menu to exclude it from fallback
-      const monthlyMenuId = allMenus.find((m) =>
-        m.name.toLowerCase().includes("monthly") || m.name.toLowerCase().includes("special")
-      )?.id;
-
-      const menu =
-        allMenus.find((m) => {
-          const n = m.name.toLowerCase();
-          return n.includes("daily") || (n.includes("cupcake") && !n.includes("monthly") && !n.includes("special"));
-        }) ?? allMenus.find((m) => m.id !== monthlyMenuId) ?? null;
-
-      if (!menu) { setLoading(false); return; }
-
-      const { data: cats } = await supabase
-        .from("menu_categories")
-        .select("id")
-        .eq("menu_id", menu.id);
-
-      if (!cats || cats.length === 0) { setLoading(false); return; }
-
-      const { data: menuItems } = await supabase
+      const { data } = await supabase
         .from("menu_items")
         .select("id, name, description, image_url, sort_order")
-        .in("category_id", cats.map((c) => c.id))
+        .in("category_id", dailyCatIds)
         .eq("is_active", true)
         .order("sort_order", { ascending: true });
 
-      setItems(menuItems ?? []);
+      setItems(data ?? []);
       setLoading(false);
     }
     fetchItems();
@@ -110,12 +85,12 @@ export default function DailyCupcakesCarousel() {
 
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2"
+            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2 snap-x snap-mandatory"
           >
             {items.map((item) => (
               <div
                 key={item.id}
-                className="flex-none w-[210px] md:w-[270px] text-center"
+                className="flex-none w-[calc(100vw-6rem)] md:w-[270px] text-center snap-start"
               >
                 <div className="mb-3">
                   {item.image_url ? (
@@ -153,7 +128,7 @@ export default function DailyCupcakesCarousel() {
 
         <div className="text-center mt-10">
           <Link
-            href="/menu"
+            href="/menu?tab=daily"
             className="inline-flex items-center gap-2 text-[#F8FAFC] font-raleway font-bold text-[16px] capitalize rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", padding: "12px 32px", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
           >

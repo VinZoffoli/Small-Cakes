@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { supabase, supabaseClientId } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
+import { classifyMenuCategories } from "@/lib/menuCategories";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,74 +12,27 @@ interface MenuItem {
   image_url: string | null;
 }
 
-const ICE_KEYWORDS = ["ice", "cream", "helado", "heladeria", "nieve", "frozen", "sorbete"];
-
-function matchesIce(str: string) {
-  const n = str.toLowerCase();
-  return ICE_KEYWORDS.some((k) => n.includes(k));
-}
-
 export default function IceCreamCarousel() {
   const [items, setItems] = useState<MenuItem[]>([]);
   const [loading, setLoading] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    async function fetch() {
-      const { data: allMenus } = await supabase
-        .from("menus")
-        .select("id, name, sort_order")
-        .eq("restaurant_id", supabaseClientId)
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true });
+    async function fetchItems() {
+      const { iceCatIds } = await classifyMenuCategories();
+      if (iceCatIds.length === 0) { setLoading(false); return; }
 
-      if (!allMenus || allMenus.length === 0) { setLoading(false); return; }
-
-      const monthlyMenuId = allMenus.find((m) => {
-        const n = m.name.toLowerCase();
-        return n.includes("monthly") || n.includes("special") || n.includes("especial") || n.includes("mes");
-      })?.id;
-
-      const nonMonthlyMenus = allMenus.filter((m) => m.id !== monthlyMenuId);
-
-      // 1. Try to find a dedicated ice cream menu by name
-      const iceCreamMenu = allMenus.find((m) => matchesIce(m.name));
-
-      let categoryIds: string[] = [];
-
-      if (iceCreamMenu) {
-        const { data: cats } = await supabase
-          .from("menu_categories")
-          .select("id")
-          .eq("menu_id", iceCreamMenu.id);
-        categoryIds = (cats ?? []).map((c) => c.id);
-      } else {
-        // 2. Search for ice cream categories across all non-monthly menus
-        const nonMonthlyIds = nonMonthlyMenus.map((m) => m.id);
-        if (nonMonthlyIds.length > 0) {
-          const { data: allCats } = await supabase
-            .from("menu_categories")
-            .select("id, name")
-            .in("menu_id", nonMonthlyIds);
-          categoryIds = (allCats ?? [])
-            .filter((c) => matchesIce(c.name))
-            .map((c) => c.id);
-        }
-      }
-
-      if (categoryIds.length === 0) { setLoading(false); return; }
-
-      const { data: menuItems } = await supabase
+      const { data } = await supabase
         .from("menu_items")
         .select("id, name, description, image_url, sort_order")
-        .in("category_id", categoryIds)
+        .in("category_id", iceCatIds)
         .eq("is_active", true)
         .order("sort_order", { ascending: true });
 
-      setItems(menuItems ?? []);
+      setItems(data ?? []);
       setLoading(false);
     }
-    fetch();
+    fetchItems();
   }, []);
 
   const scroll = (dir: number) => {
@@ -140,12 +94,12 @@ export default function IceCreamCarousel() {
 
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2"
+            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2 snap-x snap-mandatory"
           >
             {items.map((item) => (
               <div
                 key={item.id}
-                className="flex-none w-[210px] md:w-[270px] text-center"
+                className="flex-none w-[calc(100vw-6rem)] md:w-[270px] text-center snap-start"
               >
                 <div className="mb-3">
                   {item.image_url ? (
@@ -183,7 +137,7 @@ export default function IceCreamCarousel() {
 
         <div className="text-center mt-10">
           <Link
-            href="/menu"
+            href="/menu?tab=ice"
             className="inline-flex items-center gap-2 text-[#F8FAFC] font-raleway font-bold text-[16px] capitalize rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", padding: "12px 32px", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
           >
