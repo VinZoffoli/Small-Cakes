@@ -47,12 +47,12 @@ export default function Home() {
 
         
 
-          <div className="relative z-10 text-center max-w-[960px] mx-auto sm:px-10">
+          <div className="relative z-10 text-center max-w-[960px] mx-auto px-6 sm:px-10">
             {/* Award badge */}
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up"
               style={{ background: "rgba(253,230,242,0.15)", border: "1px solid rgba(253,230,242,0.35)", backdropFilter: "blur(6px)" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse-pink" />
-              <span className="font-raleway font-bold text-[12px] uppercase tracking-widest" style={{ color: "#FDE6F2" }}>
+              <span className="font-raleway font-bold text-[12px] uppercase tracking-widest whitespace-nowrap" style={{ color: "#FDE6F2" }}>
                 Award-winning · 8 years in a row
               </span>
             </div>
