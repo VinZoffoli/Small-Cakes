@@ -137,7 +137,7 @@ export default function Footer() {
         </div>
 
         {/* Social + Phone + Hours */}
-        <div className="flex flex-col gap-6 w-full lg:w-auto bg-black/25 lg:bg-transparent p-6 lg:p-0 items-center lg:items-start text-center lg:text-left lg:relative lg:pl-8">
+        <div className="flex flex-col gap-6 w-full lg:w-auto bg-black/25 lg:bg-transparent p-6 lg:p-0 items-center lg:items-start text-center lg:text-left lg:relative lg:pl-8 rounded-[12px] lg:rounded-none">
           <div className="hidden lg:block absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-[#E32973]/30 to-transparent"></div>
 
           {/* Social Media */}

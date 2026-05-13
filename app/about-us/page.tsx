@@ -15,10 +15,17 @@ export default function AboutPage() {
           style={{ height: "400px" }}
         >
           <Image
+            src="/assets/hero_about_mobile.webp"
+            alt="Smallcakes storefront"
+            fill
+            className="object-cover md:hidden"
+            priority
+          />
+          <Image
             src="/assets/hero_aboutus.webp"
             alt="Smallcakes storefront"
             fill
-            className="object-cover"
+            className="object-cover hidden md:block"
             priority
           />
           <div className="absolute inset-0" />

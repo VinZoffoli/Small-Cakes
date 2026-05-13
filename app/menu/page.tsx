@@ -286,10 +286,17 @@ function MenuContent() {
           style={{ height: "400px" }}
         >
           <Image
+            src="/assets/hero_menu_mobile.webp"
+            alt="Smallcakes menu"
+            fill
+            className="object-cover md:hidden"
+            priority
+          />
+          <Image
             src="/assets/hero_menu.webp"
             alt="Smallcakes menu"
             fill
-            className="object-cover"
+            className="object-cover hidden md:block"
             priority
           />
           <div className="absolute inset-0" />
