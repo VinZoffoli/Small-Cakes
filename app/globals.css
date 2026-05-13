@@ -198,8 +198,8 @@ body {
   text-transform: capitalize;
 }
 @media (max-width: 768px) {
-  .cate    { font-size: 25px; }
-  .for-every { font-size: 25px; }
+  .cate    { font-size: 21px; }
+  .for-every { font-size: 21px; }
 }
 
 /* ── Social Media heading ── */
@@ -246,6 +246,9 @@ body {
   text-shadow: 0px 2px 6px rgba(242, 165, 196, 0.10);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #FFF;
+}
+@media (max-width: 768px) {
+  .app, .appp { font-size: 20px; line-height: 24px; }
 }
 
 /* ── Playful animations ── */

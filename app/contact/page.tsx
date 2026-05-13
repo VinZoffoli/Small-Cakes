@@ -318,13 +318,14 @@ export default function ContactPage() {
           <svg
             aria-hidden="true"
             viewBox="0 0 1440 56"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
             style={{
               position: "absolute",
               bottom: 0,
               left: 0,
               width: "100%",
+              height: "56px",
               zIndex: 20,
               pointerEvents: "none",
               display: "block",
@@ -338,7 +339,7 @@ export default function ContactPage() {
         </section>
 
         {/* ─── MAIN CONTENT ─────────────────────────────────────── */}
-        <section className="py-16 md:py-20 bg-dots-white">
+        <section className="py-16 md:py-20 mb-[-3px]bg-dots-white ">
           <div className="max-w-[1100px] mx-auto px-4 md:px-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               {/* ── Left: Info ─────────────────────────────────── */}

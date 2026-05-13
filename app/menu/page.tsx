@@ -322,13 +322,14 @@ function MenuContent() {
           <svg
             aria-hidden="true"
             viewBox="0 0 1440 56"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
             style={{
               position: "absolute",
               bottom: 0,
               left: 0,
               width: "100%",
+              height: "56px",
               zIndex: 20,
               pointerEvents: "none",
               display: "block",

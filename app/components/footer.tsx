@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="relative font-sans w-full bg-[#6b2a2c] overflow-x-hidden">
 
       {/* Cloud top divider */}
-      <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+      <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"
         style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
         <path d="M0,0 L1440,0 L1440,45 Q1400,70 1360,45 Q1320,70 1280,45 Q1240,65 1200,45 Q1160,70 1120,45 Q1080,65 1040,45 Q1000,70 960,45 Q920,65 880,45 Q840,70 800,45 Q760,65 720,45 Q680,70 640,45 Q600,65 560,45 Q520,70 480,45 Q440,65 400,45 Q360,70 320,45 Q280,65 240,45 Q200,70 160,45 Q120,65 80,45 Q40,70 0,45 Z" fill="white"/>
       </svg>
@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
 
           <p className="text-white text-[22px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-semibold mt-2">
-            Handcrafted treats, made with love.
+            Handcrafted treats,<br className="md:hidden" /> made with love.
           </p>
           <p className="text-white/80 text-[15px] lg:text-[16px] leading-[22px] lg:leading-[24px] max-w-[540px]">
             From cupcakes to ice cream, every bite is made fresh daily with the finest ingredients.

@@ -47,7 +47,7 @@ export default function Home() {
 
         
 
-          <div className="relative z-10 text-center max-w-[960px] mx-auto">
+          <div className="relative z-10 text-center max-w-[960px] mx-auto sm:px-10">
             {/* Award badge */}
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up"
               style={{ background: "rgba(253,230,242,0.15)", border: "1px solid rgba(253,230,242,0.35)", backdropFilter: "blur(6px)" }}>
@@ -101,9 +101,9 @@ export default function Home() {
           <svg
             aria-hidden="true"
             viewBox="0 0 1440 56"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", zIndex: 20, pointerEvents: "none", display: "block" }}
+            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "56px", zIndex: 20, pointerEvents: "none", display: "block" }}
           >
             <path
               d="M0,56 L0,28 Q36,0 72,28 Q108,0 144,28 Q180,0 216,28 Q252,0 288,28 Q324,0 360,28 Q396,0 432,28 Q468,0 504,28 Q540,0 576,28 Q612,0 648,28 Q684,0 720,28 Q756,0 792,28 Q828,0 864,28 Q900,0 936,28 Q972,0 1008,28 Q1044,0 1080,28 Q1116,0 1152,28 Q1188,0 1224,28 Q1260,0 1296,28 Q1332,0 1368,28 Q1404,0 1440,28 L1440,56 Z"
@@ -190,11 +190,11 @@ export default function Home() {
               <div className="absolute inset-0 rounded-2xl" style={{ background: "rgba(14,36,45,0.78)" }} />
 
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-[54%_46%] items-stretch gap-0">
-                <div className="px-8 md:px-14 py-12 md:py-16 flex flex-col justify-center">
+                <div className="px-6 md:px-14 py-10 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
                   <h2 className="cate mb-1">Catering &amp; Custom Treats</h2>
                   <p className="for-every mb-6">For Every Celebration</p>
                   <p
-                    className="font-raleway text-white leading-relaxed max-w-[600px]"
+                    className="font-raleway text-white leading-relaxed max-w-[480px] md:max-w-[600px]"
                     style={{ color: "#ffffff", fontWeight: 600, fontSize: "17px" }}
                   >
                     From corporate events to birthdays and weddings, our
@@ -206,7 +206,7 @@ export default function Home() {
                 </div>
 
                 {/* Images — back overflows card top, front stays inside card */}
-                <div className="relative h-[380px] md:h-[440px]" style={{ overflow: "visible" }}>
+                <div className="relative h-[300px] md:h-[440px]" style={{ overflow: "visible" }}>
                   {/* Back image — pokes above the card top-right corner */}
                   <div
                     className="absolute rounded-2xl overflow-hidden shadow-2xl"
@@ -255,7 +255,7 @@ export default function Home() {
         <section className="relative pt-28 pb-28 md:pt-32 md:pb-32" style={{ backgroundImage: "url('/assets/fondo_rosado2.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
           {/* Cloud top divider */}
-          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"
             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
             <path d="M0,0 L1440,0 L1440,45 Q1400,70 1360,45 Q1320,70 1280,45 Q1240,65 1200,45 Q1160,70 1120,45 Q1080,65 1040,45 Q1000,70 960,45 Q920,65 880,45 Q840,70 800,45 Q760,65 720,45 Q680,70 640,45 Q600,65 560,45 Q520,70 480,45 Q440,65 400,45 Q360,70 320,45 Q280,65 240,45 Q200,70 160,45 Q120,65 80,45 Q40,70 0,45 Z" fill="white"/>
           </svg>
@@ -313,7 +313,7 @@ export default function Home() {
           </div>
 
           {/* Cloud bottom divider */}
-          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"
             style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
             <path d="M0,70 L1440,70 L1440,25 Q1400,0 1360,25 Q1320,0 1280,25 Q1240,5 1200,25 Q1160,0 1120,25 Q1080,5 1040,25 Q1000,0 960,25 Q920,5 880,25 Q840,0 800,25 Q760,5 720,25 Q680,0 640,25 Q600,5 560,25 Q520,0 480,25 Q440,5 400,25 Q360,0 320,25 Q280,5 240,25 Q200,0 160,25 Q120,5 80,25 Q40,0 0,25 Z" fill="white"/>
           </svg>

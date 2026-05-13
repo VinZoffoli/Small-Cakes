@@ -53,9 +53,9 @@ export default function AboutPage() {
           <svg
             aria-hidden="true"
             viewBox="0 0 1440 56"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", zIndex: 20, pointerEvents: "none", display: "block" }}
+            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "56px", zIndex: 20, pointerEvents: "none", display: "block" }}
           >
             <path
               d="M0,56 L0,28 Q36,0 72,28 Q108,0 144,28 Q180,0 216,28 Q252,0 288,28 Q324,0 360,28 Q396,0 432,28 Q468,0 504,28 Q540,0 576,28 Q612,0 648,28 Q684,0 720,28 Q756,0 792,28 Q828,0 864,28 Q900,0 936,28 Q972,0 1008,28 Q1044,0 1080,28 Q1116,0 1152,28 Q1188,0 1224,28 Q1260,0 1296,28 Q1332,0 1368,28 Q1404,0 1440,28 L1440,56 Z"
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <svg
             aria-hidden="true"
             viewBox="0 0 1440 40"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMin slice"
             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "40px", display: "block", pointerEvents: "none" }}
           >
             <path
@@ -198,7 +198,7 @@ export default function AboutPage() {
           <svg
             aria-hidden="true"
             viewBox="0 0 1440 40"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMax slice"
             style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "40px", display: "block", pointerEvents: "none" }}
           >
             <path
