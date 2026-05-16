@@ -49,6 +49,7 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/menu", label: "Menu" },
     { href: "/about-us", label: "About Us" },
+    { href: "/catering", label: "Catering" },
     { href: "/contact", label: "Contact Us" },
   ];
 

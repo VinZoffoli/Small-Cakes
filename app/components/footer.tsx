@@ -9,9 +9,9 @@ export default function Footer() {
     <footer className="relative font-sans w-full bg-[#6b2a2c] overflow-x-hidden">
 
       {/* Cloud top divider */}
-      <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
-        <path d="M0,0 L1440,0 L1440,45 Q1400,70 1360,45 Q1320,70 1280,45 Q1240,65 1200,45 Q1160,70 1120,45 Q1080,65 1040,45 Q1000,70 960,45 Q920,65 880,45 Q840,70 800,45 Q760,65 720,45 Q680,70 640,45 Q600,65 560,45 Q520,70 480,45 Q440,65 400,45 Q360,70 320,45 Q280,65 240,45 Q200,70 160,45 Q120,65 80,45 Q40,70 0,45 Z" fill="white"/>
+      <svg aria-hidden="true" viewBox="0 0 1440 56" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"
+        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "56px", pointerEvents: "none", display: "block" }}>
+        <path d="M0,0 L1440,0 L1440,28 Q1404,56 1368,28 Q1332,56 1296,28 Q1260,56 1224,28 Q1188,56 1152,28 Q1116,56 1080,28 Q1044,56 1008,28 Q972,56 936,28 Q900,56 864,28 Q828,56 792,28 Q756,56 720,28 Q684,56 648,28 Q612,56 576,28 Q540,56 504,28 Q468,56 432,28 Q396,56 360,28 Q324,56 288,28 Q252,56 216,28 Q180,56 144,28 Q108,56 72,28 Q36,56 0,28 Z" fill="white"/>
       </svg>
 
       <div className="w-full max-w-[1100px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-[40px] lg:gap-[60px] pt-[100px] pb-[40px] lg:pt-[120px] lg:pb-[80px] px-6 lg:px-0">
@@ -78,7 +78,7 @@ export default function Footer() {
               { label: "Home", href: "/" },
               { label: "Menu", href: "/menu" },
               { label: "About Us", href: "/about-us" },
-     
+              { label: "Catering", href: "/catering" },
             ].map(({ label, href }) => {
               const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
               return (
