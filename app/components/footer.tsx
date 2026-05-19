@@ -34,7 +34,7 @@ export default function Footer() {
             href="https://maps.app.goo.gl/26KwMPiVgXg9QjCP6"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#979797] leading-[20px] text-[15px] lg:text-[16px] uppercase hover:text-[#E32973] transition group"
+            className="flex items-center gap-2 text-white/60 leading-[20px] text-[15px] lg:text-[16px] uppercase hover:text-[#E32973] transition group"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="hidden lg:block flex-shrink-0">
               <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" className="fill-current" />
@@ -67,7 +67,7 @@ export default function Footer() {
             <div className="hidden lg:block absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-[#E32973]/30 to-transparent"></div>
             <div className="flex flex-col mb-2">
               <p
-                className="text-[#E32973] text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
+                className="text-white text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
                 style={{ fontFamily: "'Boorsok', cursive" }}
               >
                 Smallcakes
@@ -85,7 +85,7 @@ export default function Footer() {
                 <Link
                   key={label}
                   href={href}
-                  className={`text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#E32973] hover:translate-x-1 transition-all duration-200 inline-block ${isActive ? "text-[#E32973] border-b border-[#E32973]" : "text-[#FDE6F2]"}`}
+                  className={`text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#E32973] hover:translate-x-1 transition-all duration-200 inline-block ${isActive ? "text-white font-semibold border-b border-[#E32973]" : "text-[#FDE6F2]"}`}
                 >
                   {label}
                 </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
             <div className="hidden lg:block absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-[#E32973]/30 to-transparent"></div>
             <div className="flex flex-col mb-2">
               <p
-                className="text-[#E32973] text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
+                className="text-white text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
                 style={{ fontFamily: "'Boorsok', cursive" }}
               >
                 More
@@ -127,7 +127,7 @@ export default function Footer() {
                 <Link
                   key={label}
                   href={href}
-                  className={`text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#E32973] hover:translate-x-1 transition-all duration-200 inline-block ${isActive ? "text-[#E32973] border-b border-[#E32973]" : "text-[#FDE6F2]"}`}
+                  className={`text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#E32973] hover:translate-x-1 transition-all duration-200 inline-block ${isActive ? "text-white font-semibold border-b border-[#E32973]" : "text-[#FDE6F2]"}`}
                 >
                   {label}
                 </Link>
@@ -144,7 +144,7 @@ export default function Footer() {
           <div className="flex flex-col items-center lg:items-start">
             <div className="flex flex-col mb-3">
               <p
-                className="text-[#E32973] text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
+                className="text-white text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
                 style={{ fontFamily: "'Boorsok', cursive" }}
               >
                 Social Media
@@ -174,7 +174,7 @@ export default function Footer() {
           <div className="flex flex-col items-center lg:items-start">
             <div className="flex flex-col mb-2">
               <p
-                className="text-[#E32973] text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
+                className="text-white text-[20px] lg:text-[28px] leading-[100%] tracking-wide uppercase"
                 style={{ fontFamily: "'Boorsok', cursive" }}
               >
                 Phone

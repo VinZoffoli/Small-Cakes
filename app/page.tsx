@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 import ScrollDownButton from "./components/ScrollDownButton";
+import HeroVideo from "./components/HeroVideo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,25 +27,8 @@ export default function Home() {
       <main className="flex-1">
 
         {/* ─── HERO ─────────────────────────────────────────────── */}
-        <section className="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <iframe
-              src="https://player.vimeo.com/video/1090145707?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&playsinline=1&quality=1080p"
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "177.78vh",
-                minWidth: "100%",
-                minHeight: "56.25vw",
-                height: "100%",
-                border: "none",
-              }}
-              allow="autoplay; fullscreen"
-              title="Hero background video"
-            />
-          </div>
+        <section className="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center justify-center bg-[#0d0508]">
+          <HeroVideo />
           <div className="absolute inset-0 bg-black/50" />
 
         
