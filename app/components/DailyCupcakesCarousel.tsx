@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabase";
 import { classifyMenuCategories } from "@/lib/menuCategories";
+import Image from "next/image";
 import Link from "next/link";
 
 interface MenuItem {
@@ -49,7 +50,7 @@ export default function DailyCupcakesCarousel() {
             Daily Cupcakes
           </h2>
           <div className="flex justify-center mt-2 mb-10">
-            <img src="/assets/fondo_titulos.webp" alt="" style={{ height: "12px", width: "auto" }} />
+            <img src="/assets/fondo_titulos.webp" alt="" width={300} height={30} style={{ height: "12px", width: "auto" }} />
           </div>
           <div className="flex justify-center py-10">
             <div className="w-10 h-10 border-4 border-brand border-t-transparent rounded-full animate-spin" />
@@ -92,15 +93,17 @@ export default function DailyCupcakesCarousel() {
                 key={item.id}
                 className="flex-none w-[calc(100vw-6rem)] md:w-[270px] text-center snap-start"
               >
-                <div className="mb-3">
+                <div className="mb-3 relative w-full aspect-square">
                   {item.image_url ? (
-                    <img
+                    <Image
                       src={item.image_url}
                       alt={item.name}
-                      className="w-full aspect-square object-contain"
+                      fill
+                      sizes="(max-width: 768px) calc(100vw - 6rem), 270px"
+                      className="object-contain"
                     />
                   ) : (
-                    <div className="w-full aspect-square flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center">
                       <span className="font-boorsok text-[13px] text-brand text-center px-3">
                         {item.name}
                       </span>

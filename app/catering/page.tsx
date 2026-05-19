@@ -356,6 +356,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default function CateringPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -394,14 +395,24 @@ export default function CateringPage() {
   const detailsLen = orderDetailsValue?.length ?? 0;
 
   async function onSubmit(data: CateringFormData) {
-    await new Promise((r) => setTimeout(r, 900));
-    console.log("Catering form submitted:", data);
+    setSubmitError(null);
+    const fd = new FormData();
+    fd.append("data", JSON.stringify(data));
+    const fileInput = document.getElementById("referenceImage") as HTMLInputElement;
+    if (fileInput?.files?.[0]) fd.append("image", fileInput.files[0]);
+
+    const res = await fetch("/api/catering", { method: "POST", body: fd });
+    if (!res.ok) {
+      setSubmitError("Something went wrong. Please try again or call us directly.");
+      return;
+    }
     setSubmitted(true);
   }
 
   function handleReset() {
     reset();
     setSubmitted(false);
+    setSubmitError(null);
   }
 
   return (
@@ -924,6 +935,11 @@ export default function CateringPage() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Submit error */}
+                  {submitError && (
+                    <p className="font-raleway text-[13px] text-red-500 text-center -mb-4">{submitError}</p>
+                  )}
 
                   {/* Submit */}
                   <button

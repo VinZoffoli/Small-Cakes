@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4 max-w-[580px] items-center lg:items-start text-center lg:text-left">
           <div className="relative">
             <div className="absolute inset-0 bg-[#E32973]/20 blur-3xl rounded-full"></div>
-            <img src="/assets/logo_footer.webp" alt="Smallcakes Gwinnett" className="relative w-[200px] lg:w-[261px] mb-[10px] lg:mb-[20px]" />
+            <img src="/assets/logo_footer.webp" alt="Smallcakes Gwinnett" width={528} height={127} className="relative w-[200px] lg:w-[261px] mb-[10px] lg:mb-[20px]" />
           </div>
 
           <p className="text-white text-[22px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-semibold mt-2">
@@ -212,7 +212,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-2">
             <a href="https://restoexp.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition">
-              <img src="/assets/restoexplogo.webp" alt="Resto Experience" className="h-auto w-[200px] sm:w-[240px] lg:w-[307px]" />
+              <img src="/assets/restoexplogo.webp" alt="Resto Experience" width={500} height={59} className="h-auto w-[200px] sm:w-[240px] lg:w-[307px]" />
             </a>
           </div>
 

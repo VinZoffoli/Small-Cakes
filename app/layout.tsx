@@ -40,6 +40,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <link rel="preload" href="/fonts/boorsok.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Raleway-Bold.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+      </head>
       <body className="min-h-full flex flex-col antialiased font-raleway text-brand-text bg-white">
         {children}
         <ScrollToTopButton />

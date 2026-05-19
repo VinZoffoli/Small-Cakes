@@ -27,7 +27,7 @@ export default function Home() {
         <section className="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <iframe
-              src="https://player.vimeo.com/video/1090145707?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&playsinline=1"
+              src="https://player.vimeo.com/video/1090145707?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&playsinline=1&quality=1080p"
               style={{
                 position: "absolute",
                 top: "50%",
@@ -160,6 +160,8 @@ export default function Home() {
         <img
           src="/assets/fondo_interseccion.webp"
           alt=""
+          width={1386}
+          height={12}
           style={{ width: "100%", display: "block" }}
         />
 
@@ -270,6 +272,8 @@ export default function Home() {
                 <img
                   src="/assets/fondo_titulos.webp"
                   alt=""
+                  width={300}
+                  height={30}
                   style={{ height: "12px", width: "auto" }}
                 />
               </div>
@@ -570,6 +574,8 @@ export default function Home() {
             <img
               src="/assets/fondo_reseñas.webp"
               alt="Best of Gwinnett Award Winners"
+              width={2030}
+              height={1042}
               className="w-full"
               style={{ display: "block" }}
             />

@@ -229,6 +229,7 @@ function CustomSelect({
 // ── Page ──────────────────────────────────────────────────────────────────
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -261,14 +262,23 @@ export default function ContactPage() {
   const isCustomOrder = inquiryType === "Custom Order";
 
   async function onSubmit(data: ContactFormData) {
-    await new Promise((r) => setTimeout(r, 900));
-    console.log("Contact form submitted:", data);
+    setSubmitError(null);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) {
+      setSubmitError("Something went wrong. Please try again or call us directly.");
+      return;
+    }
     setSubmitted(true);
   }
 
   function handleReset() {
     reset();
     setSubmitted(false);
+    setSubmitError(null);
   }
 
   return (
@@ -827,6 +837,11 @@ export default function ContactPage() {
                         />
                         <FieldError message={errors.message?.message} />
                       </div>
+
+                      {/* Submit error */}
+                      {submitError && (
+                        <p className="font-raleway text-[13px] text-red-500 text-center -mb-1">{submitError}</p>
+                      )}
 
                       {/* Submit */}
                       <button

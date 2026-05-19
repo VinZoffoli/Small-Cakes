@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const socialVideos = [
   "https://player.vimeo.com/video/1082917001?autoplay=1&muted=1&background=1&playsinline=1",
@@ -7,39 +7,64 @@ const socialVideos = [
   "https://player.vimeo.com/video/1082915703?autoplay=1&muted=1&background=1&playsinline=1",
 ];
 
+const iframeStyle: React.CSSProperties = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "177.78%",
+  height: "177.78%",
+  minWidth: "100%",
+  minHeight: "100%",
+  border: "none",
+};
+
+const Placeholder = () => (
+  <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, #fde8f2 0%, #fff0f6 100%)" }} />
+);
+
 export default function VideoSlider() {
   const [current, setCurrent] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <>
+    <div ref={containerRef}>
       {/* Mobile: single video + navigation */}
       <div className="md:hidden mb-10 flex flex-col items-center">
         <div
           className="relative rounded-2xl overflow-hidden shadow-lg"
           style={{
             width: "min(85vw, 300px)",
-            height: "min(75vw * 16/9, 480px)",
             aspectRatio: "9/16",
             outline: "2px solid rgba(227,41,115,0.15)",
             outlineOffset: "3px",
           }}
         >
-          <iframe
-            src={socialVideos[current]}
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "177.78%",
-              height: "177.78%",
-              minWidth: "100%",
-              minHeight: "100%",
-              border: "none",
-            }}
-            allow="autoplay; fullscreen"
-            title={`Social video ${current + 1}`}
-          />
+          {isVisible ? (
+            <iframe
+              src={socialVideos[current]}
+              style={iframeStyle}
+              allow="autoplay; fullscreen"
+              title={`Social video ${current + 1}`}
+            />
+          ) : <Placeholder />}
         </div>
 
         {/* Nav dots + arrows */}
@@ -96,25 +121,17 @@ export default function VideoSlider() {
             className="relative flex-shrink-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             style={{ width: `${w}px`, height: `${h}px`, outline: "2px solid rgba(227,41,115,0.15)", outlineOffset: "3px" }}
           >
-            <iframe
-              src={url}
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "177.78%",
-                height: "177.78%",
-                minWidth: "100%",
-                minHeight: "100%",
-                border: "none",
-              }}
-              allow="autoplay; fullscreen"
-              title={`Social video ${i + 1}`}
-            />
+            {isVisible ? (
+              <iframe
+                src={url}
+                style={iframeStyle}
+                allow="autoplay; fullscreen"
+                title={`Social video ${i + 1}`}
+              />
+            ) : <Placeholder />}
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
