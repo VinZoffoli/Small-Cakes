@@ -1,8 +1,9 @@
 "use client";
+import { ArrowDownIcon } from "@phosphor-icons/react";
 
 export default function ScrollDownButton() {
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center">
       <button
         onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
         aria-label="Scroll down"
@@ -13,19 +14,7 @@ export default function ScrollDownButton() {
           backdropFilter: "blur(4px)",
         }}
       >
-        <svg
-          className="animate-bounce-y"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#FDE6F2"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
+        <ArrowDownIcon size={18} weight="duotone" color="#FDE6F2" className="animate-bounce-y" />
       </button>
     </div>
   );

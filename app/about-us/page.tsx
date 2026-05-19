@@ -93,7 +93,7 @@ export default function AboutPage() {
                 <h2
                   className="font-boorsok uppercase relative z-10 -mt-4 mb-5"
                   style={{
-                    fontSize: "clamp(22px, 3vw, 30px)",
+                    fontSize: "clamp(28px, 4vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135, 20, 61, 0.40)",
@@ -105,16 +105,11 @@ export default function AboutPage() {
                   Quality, Creativity,<br />And Community
                 </h2>
 
-                <p className="font-raleway text-[15px] leading-relaxed mb-4" style={{ color: "#87143D" }}>
-                  At Smallcakes, we believe every bite should bring joy. That&apos;s why we{" "}
-                  <strong>bake fresh, handcrafted cupcakes</strong> and small-batch ice cream daily,{" "}
-                  <strong>using only the finest ingredients.</strong> From nostalgic favorites to fun, new
-                  flavors, every treat is handmade with care, combining quality, creativity, and a love for
-                  our community.
+                <p className="font-raleway font-bold text-[16px] leading-relaxed mb-4" style={{ color: "#87143D" }}>
+                  At Smallcakes, we believe every bite should bring joy. That&apos;s why we bake fresh, handcrafted cupcakes and small-batch ice cream daily, using only the finest ingredients. From nostalgic favorites to fun, new flavors, every treat is handmade with care, combining quality, creativity, and a love for our community.
                 </p>
-                <p className="font-raleway text-[15px] leading-relaxed mb-7" style={{ color: "#87143D" }}>
-                  Whether it&apos;s a birthday, a wedding, or just a sweet craving,{" "}
-                  <strong>we&apos;re here to make your moments even better.</strong>
+                <p className="font-raleway font-bold text-[16px] leading-relaxed mb-7" style={{ color: "#87143D" }}>
+                  Whether it&apos;s a birthday, a wedding, or just a sweet craving, we&apos;re here to make your moments even better.
                 </p>
                 <Link
                   href="/#locations"
@@ -188,7 +183,7 @@ export default function AboutPage() {
               >
                 Sold Out Notice
               </h2>
-              <p className="font-raleway text-[14px] leading-relaxed" style={{ color: "#87143D" }}>
+              <p className="font-raleway font-bold text-[16px] leading-relaxed" style={{ color: "#87143D" }}>
                 We strive to ensure that we have enough fresh products every day for all of our customers.
                 In rare moments, there may be sold out days due to unforeseeable demand. Please note that if
                 we sell out prior to closing times, we will post a notice on our social media pages.
@@ -263,7 +258,7 @@ export default function AboutPage() {
                 <h2
                   className="font-boorsok uppercase leading-tight mb-6"
                   style={{
-                    fontSize: "clamp(24px, 3.2vw, 34px)",
+                    fontSize: "clamp(28px, 4vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135, 20, 61, 0.40)",
@@ -274,15 +269,11 @@ export default function AboutPage() {
                 >
                   Delicious Treats for<br />Every Occasion
                 </h2>
-                <p className="font-raleway text-[15px] leading-relaxed mb-4" style={{ color: "#87143D" }}>
-                  Our menu changes daily, bringing you a{" "}
-                  <strong>rotating selection of gourmet cupcakes and creamy ice creams.</strong>
+                <p className="font-raleway font-bold text-[16px] leading-relaxed mb-4" style={{ color: "#87143D" }}>
+                  Our menu changes daily, bringing you a rotating selection of gourmet cupcakes and creamy ice creams.
                 </p>
-                <p className="font-raleway text-[15px] leading-relaxed mb-7" style={{ color: "#87143D" }}>
-                  Need something special?{" "}
-                  <strong>We create custom cupcakes</strong>, cakes, and desserts for any celebration.
-                  Whether it&apos;s an elegant wedding or a fun-themed party, we&apos;ll bring your vision
-                  to life—one sweet bite at a time.
+                <p className="font-raleway font-bold text-[16px] leading-relaxed mb-7" style={{ color: "#87143D" }}>
+                  Need something special? We create custom cupcakes, cakes, and desserts for any celebration. Whether it&apos;s an elegant wedding or a fun-themed party, we&apos;ll bring your vision to life—one sweet bite at a time.
                 </p>
                 <a
                   href="https://www.smallcakesgwinnettshop.com"
@@ -312,10 +303,23 @@ export default function AboutPage() {
                 backgroundPosition: "center",
               }}
             >
-              <div className="absolute inset-0 rounded-2xl" style={{ background: "rgba(14,36,45,0.82)" }} />
-              <div className="relative z-10 max-w-[560px] mx-auto">
-                <h2 className="cate mb-3">Join to the Smallcakes Team</h2>
-                <p className="font-raleway text-white text-[15px] font-medium leading-relaxed mb-8">
+              <div className="absolute inset-0 rounded-2xl" style={{ background: "#571D1F 100%" }} />
+              <div className="relative z-10 max-w-[900px] mx-auto">
+                  <h2
+                  className="font-boorsok uppercase leading-tight mb-6 whitespace-nowrap"
+                  style={{
+                    fontSize: "clamp(22px, 3.5vw, 42px)",
+                    color: "#E32973",
+                    fontFeatureSettings: "'liga' off, 'clig' off",
+                    textShadow: "0px 2.64px 7.92px rgba(135, 20, 61, 0.40)",
+                    WebkitTextStrokeWidth: "0.6px",
+                    WebkitTextStrokeColor: "#FFF",
+                    lineHeight: "1.25",
+                  }}
+                >
+                  Join to the Smallcakes Team
+                </h2>
+                <p className="font-raleway text-white text-[16px] font-bold leading-relaxed mb-8">
                   Love baking and making people smile? We&apos;re always looking for passionate, hardworking
                   team members. Click the link below to apply and be part of something sweet!
                 </p>
@@ -354,7 +358,7 @@ export default function AboutPage() {
                 </span>
                 <p
                   className="font-boorsok font-normal uppercase"
-                  style={{ fontSize: "clamp(28px, 4vw, 38px)", color: "#bd1957", letterSpacing: "1px" }}
+                  style={{ fontSize: "clamp(28px, 4vw, 42px)", color: "#bd1957", letterSpacing: "1px" }}
                 >
                   Winners for{" "}
                   <strong style={{ color: "#bd1957", letterSpacing: "2px", fontWeight: 400 }}>

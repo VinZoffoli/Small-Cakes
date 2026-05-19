@@ -375,7 +375,7 @@ export default function ContactPage() {
                 <h2
                   className="font-boorsok uppercase relative z-10 -mt-3 mb-3"
                   style={{
-                    fontSize: "clamp(24px, 3vw, 34px)",
+                    fontSize: "clamp(28px, 4vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135,20,61,0.40)",
@@ -389,7 +389,7 @@ export default function ContactPage() {
                   Sweet And Simple.
                 </h2>
                 <p
-                  className="font-raleway text-[15px] leading-relaxed mb-8"
+                  className="font-raleway font-bold text-[16px] leading-relaxed mb-8"
                   style={{ color: "#87143D" }}
                 >
                   Have a question? Need more info?
@@ -403,14 +403,14 @@ export default function ContactPage() {
                     {
                       city: "Snellville",
                       address:
-                        "The Shoppes at Webb Gin\n1350 Scenic Hwy N, Suite 824\nSnellville, GA",
+                        "The Shoppes at Webb Gin\n1350 Scenic Hwy N, Suite 824, Snellville, GA",
                       phone: "770-864-1984",
                       tel: "tel:7708641984",
                     },
                     {
                       city: "Buford",
                       address:
-                        "Mall of Georgia\n2925 Buford Dr, Suite 1220\nBuford, GA",
+                        "Mall of Georgia\n2925 Buford Dr, Suite 1220, Buford, GA",
                       phone: "770-224-8033",
                       tel: "tel:7702248033",
                     },
@@ -444,20 +444,20 @@ export default function ContactPage() {
                       </div>
                       <div className="text-center lg:text-left">
                         <p
-                          className="font-boorsok text-[18px] mb-0.5"
+                          className="font-boorsok text-[24px] mb-0.5"
                           style={{ color: "#E32973" }}
                         >
                           {city}
                         </p>
                         <p
-                          className="font-raleway text-[13px] leading-relaxed whitespace-pre-line"
+                          className="font-raleway font-bold text-[16px] leading-relaxed whitespace-pre-line"
                           style={{ color: "#87143D" }}
                         >
                           {address}
                         </p>
                         <a
                           href={tel}
-                          className="font-raleway font-bold text-[13px] mt-1 block hover:opacity-75 transition-opacity"
+                          className="font-raleway font-bold text-[16px] mt-1 block hover:opacity-75 transition-opacity"
                           style={{ color: "#E32973" }}
                         >
                           {phone}

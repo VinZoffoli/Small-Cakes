@@ -5,6 +5,7 @@ import ScrollDownButton from "./components/ScrollDownButton";
 import HeroVideo from "./components/HeroVideo";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRightIcon, InstagramLogoIcon, TiktokLogoIcon, CheckIcon, AndroidLogoIcon, AppleLogoIcon, MapPinIcon, PhoneIcon, ClockIcon } from "@phosphor-icons/react/dist/ssr";
 
 const MonthlySpecials = dynamic(() => import("./components/MonthlySpecials"));
 const DailyCupcakesCarousel = dynamic(() => import("./components/DailyCupcakesCarousel"));
@@ -43,8 +44,8 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="letras uppercase mb-4 animate-fade-in-up delay-100" style={{ fontSize: "clamp(30px, 5vw, 52px)", lineHeight: "1.1" }}>
-              Home of<br /> the Smallcakes Smash
+            <h1 className="letras uppercase mb-4 animate-fade-in-up delay-100" style={{ fontSize: "clamp(32px, 5.5vw, 68px)", lineHeight: "1.1" }}>
+              Home of the<br />Smallcakes Smash
             </h1>
             <p
               className="font-raleway capitalize mb-8 animate-fade-in-up delay-200"
@@ -80,6 +81,9 @@ export default function Home() {
               </a>
             </div>
 
+          </div>
+
+          <div style={{ position: "absolute", bottom: "100px", left: "50%", transform: "translateX(-50%)", zIndex: 25 }}>
             <ScrollDownButton />
           </div>
 
@@ -103,7 +107,7 @@ export default function Home() {
           className="py-16 md:py-20 text-center"
           style={{ background: "linear-gradient(180deg, #ffffff 0%, #fff0f6 45%, #fff0f6 55%, #ffffff 100%)" }}
         >
-          <div className="max-w-[760px] mx-auto px-4 md:px-6">
+          <div className="max-w-[960px] mx-auto px-4 md:px-6">
             <div className="flex items-center justify-center gap-4 md:gap-6 mb-6 animate-fade-in-up">
               <div className="flex flex-col items-center gap-2 flex-shrink-0">
                 <div className="w-5 h-5 rounded-full bg-brand-dark animate-pulse" />
@@ -111,7 +115,7 @@ export default function Home() {
                 <div className="w-2.5 h-2.5 rounded-full bg-brand" />
               </div>
               <h2 className="text-center leading-tight">
-                <span className="hand">Handcrafted treats, </span>
+                <span className="hand">Handcrafted treats, </span><br/>
                 <span className="made">Made Fresh to </span>
                 <span className="day">Brighten Your Day</span>
               </h2>
@@ -122,12 +126,10 @@ export default function Home() {
               </div>
             </div>
             <p
-              className="font-raleway font-medium text-[16px] text-center mb-8 max-w-[560px] mx-auto"
-              style={{ color: "#87143D", lineHeight: "1.6" }}
+              className="font-raleway font-bold text-[16px] text-center mb-8 max-w-[560px] mx-auto"
+              style={{ color: "#2D0A14", lineHeight: "1.6" }}
             >
-              Our gourmet cupcakes are baked fresh daily. Our small-batch ice
-              cream is made on site.{" "}
-              <strong>Plus, don&#39;t miss our exclusive flavors—new ones drop monthly. Taste them before they&#39;re gone!</strong>
+              Our gourmet cupcakes are baked fresh daily. Our small-batch ice cream is made on site. Plus, don&#39;t miss our exclusive flavors. New ones drop monthly. Taste them before they&#39;re gone!
             </p>
             <Link
               href="/about-us"
@@ -135,9 +137,7 @@ export default function Home() {
               style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", color: "#F8FAFC", padding: "12px 32px", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
             >
               Read More About Us
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRightIcon size={16} weight="duotone" />
             </Link>
           </div>
         </section>
@@ -170,20 +170,22 @@ export default function Home() {
             <div
               className="relative rounded-2xl"
               style={{
-                backgroundImage: "url(/assets/banner_azul.webp)",
+                backgroundImage: "url(/assets/fondo_rosado.webp)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             >
-              <div className="absolute inset-0 rounded-2xl" style={{ background: "rgba(14,36,45,0.78)" }} />
+              <div className="absolute inset-0 rounded-2xl" style={{ background: "#561d1e" }} />
 
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-[54%_46%] items-stretch gap-0">
                 <div className="px-6 md:px-14 py-10 md:py-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-                  <h2 className="cate mb-1">Catering &amp; Custom Treats</h2>
-                  <p className="for-every mb-6">For Every Celebration</p>
+
+                  <h2 className="leading-snug mb-5">
+                    <span className="appp block">Catering &amp; Custom Treats For Every Celebration</span>
+                  </h2>
                   <p
                     className="font-raleway text-white leading-relaxed max-w-[480px] md:max-w-[600px]"
-                    style={{ color: "#ffffff", fontWeight: 600, fontSize: "17px" }}
+                    style={{ color: "#ffffff", fontWeight: 700, fontSize: "16px" }}
                   >
                     From corporate events to birthdays and weddings, our
                     homemade cupcakes and small-batch ice cream bring a touch
@@ -243,9 +245,9 @@ export default function Home() {
         <section className="relative pt-28 pb-28 md:pt-32 md:pb-32" style={{ backgroundImage: "url('/assets/fondo_rosado2.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
           {/* Cloud top divider */}
-          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"
-            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
-            <path d="M0,0 L1440,0 L1440,45 Q1400,70 1360,45 Q1320,70 1280,45 Q1240,65 1200,45 Q1160,70 1120,45 Q1080,65 1040,45 Q1000,70 960,45 Q920,65 880,45 Q840,70 800,45 Q760,65 720,45 Q680,70 640,45 Q600,65 560,45 Q520,70 480,45 Q440,65 400,45 Q360,70 320,45 Q280,65 240,45 Q200,70 160,45 Q120,65 80,45 Q40,70 0,45 Z" fill="white"/>
+          <svg aria-hidden="true" viewBox="0 0 1440 56" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "56px", zIndex: 10, pointerEvents: "none", display: "block" }}>
+            <path d="M0,0 L1440,0 L1440,28 Q1404,56 1368,28 Q1332,56 1296,28 Q1260,56 1224,28 Q1188,56 1152,28 Q1116,56 1080,28 Q1044,56 1008,28 Q972,56 936,28 Q900,56 864,28 Q828,56 792,28 Q756,56 720,28 Q684,56 648,28 Q612,56 576,28 Q540,56 504,28 Q468,56 432,28 Q396,56 360,28 Q324,56 288,28 Q252,56 216,28 Q180,56 144,28 Q108,56 72,28 Q36,56 0,28 Z" fill="white"/>
           </svg>
 
           <div className="max-w-[1100px] mx-auto px-4 md:px-0">
@@ -254,17 +256,9 @@ export default function Home() {
                 <span className="follow">Follow Us on </span> <br></br>
                 <span className="social">Social Media</span>
               </h2>
-              <div className="flex justify-center mb-4">
-                <img
-                  src="/assets/fondo_titulos.webp"
-                  alt=""
-                  width={300}
-                  height={30}
-                  style={{ height: "12px", width: "auto" }}
-                />
-              </div>
+             
               <p
-                className="font-raleway text-[15px] font-medium max-w-[500px] mx-auto leading-relaxed"
+                className="font-raleway text-[16px] font-bold max-w-[500px] mx-auto leading-relaxed"
                 style={{ color: "#87143D" }}
               >
                 Follow us for the latest flavors, exclusive treats, and
@@ -282,9 +276,7 @@ export default function Home() {
                 className="w-full sm:w-auto flex items-center justify-center gap-3 font-raleway font-bold text-[15px] px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                 style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", color: "#F8FAFC", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
+                <InstagramLogoIcon size={20} weight="duotone" />
                 Instagram
               </a>
               <a
@@ -294,18 +286,16 @@ export default function Home() {
                 className="w-full sm:w-auto flex items-center justify-center gap-3 font-raleway font-bold text-[15px] px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                 style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", color: "#F8FAFC", boxShadow: "0 4px 14px rgba(227,41,115,0.28)" }}
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.53a8.22 8.22 0 004.8 1.52V6.6a4.85 4.85 0 01-1.03-.09z" />
-                </svg>
+                <TiktokLogoIcon size={20} weight="duotone" />
                 TikTok
               </a>
             </div>
           </div>
 
           {/* Cloud bottom divider */}
-          <svg aria-hidden="true" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"
-            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "70px", pointerEvents: "none", display: "block" }}>
-            <path d="M0,70 L1440,70 L1440,25 Q1400,0 1360,25 Q1320,0 1280,25 Q1240,5 1200,25 Q1160,0 1120,25 Q1080,5 1040,25 Q1000,0 960,25 Q920,5 880,25 Q840,0 800,25 Q760,5 720,25 Q680,0 640,25 Q600,5 560,25 Q520,0 480,25 Q440,5 400,25 Q360,0 320,25 Q280,5 240,25 Q200,0 160,25 Q120,5 80,25 Q40,0 0,25 Z" fill="white"/>
+          <svg aria-hidden="true" viewBox="0 0 1440 56" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"
+            style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "56px", zIndex: 10, pointerEvents: "none", display: "block" }}>
+            <path d="M0,56 L0,28 Q36,0 72,28 Q108,0 144,28 Q180,0 216,28 Q252,0 288,28 Q324,0 360,28 Q396,0 432,28 Q468,0 504,28 Q540,0 576,28 Q612,0 648,28 Q684,0 720,28 Q756,0 792,28 Q828,0 864,28 Q900,0 936,28 Q972,0 1008,28 Q1044,0 1080,28 Q1116,0 1152,28 Q1188,0 1224,28 Q1260,0 1296,28 Q1332,0 1368,28 Q1404,0 1440,28 L1440,56 Z" fill="white"/>
           </svg>
         </section>
 
@@ -337,14 +327,14 @@ export default function Home() {
                 {/* Text + buttons — second on mobile, left column on desktop */}
                 <div className="order-last md:order-first px-6 md:px-14 py-8 md:py-16 flex flex-col justify-center">
                   <h2 className="leading-snug mb-5">
-                    <span className="app block">Download the App</span>
-                    <span className="appp block">And Sweeten Your Day</span>
+                    <span className="app block whitespace-nowrap">Download the App</span>
+                    <span className="appp block whitespace-nowrap">And Sweeten Your Day</span>
                   </h2>
-                  <p className="font-raleway text-white text-[15px] font-medium leading-relaxed mb-5 max-w-[420px]">
+                  <p className="font-raleway text-white text-[16px] font-bold leading-relaxed mb-5 max-w-[420px]">
                     Don&#39;t wait any longer to enjoy all the benefits. Download our app today
                     from your app store and start enjoying a world of flavor at your fingertips!
                   </p>
-                  <ul className="font-raleway text-white text-[15px] font-medium mb-8 space-y-2.5">
+                  <ul className="font-raleway text-white text-[16px] font-bold mb-8 space-y-2.5">
                     {[
                       "Get rewards with every purchase",
                       "Order ahead – never miss your favorite flavor",
@@ -352,9 +342,7 @@ export default function Home() {
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-2.5">
                         <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: "rgba(227,41,115,0.30)" }}>
-                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
+                          <CheckIcon size={12} weight="duotone" className="text-white" />
                         </span>
                         {item}
                       </li>
@@ -368,9 +356,7 @@ export default function Home() {
                       className="flex items-center justify-center gap-2 font-raleway font-bold text-[15px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                       style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", padding: "12px 28px", boxShadow: "0 4px 14px rgba(227,41,115,0.25)" }}
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84 1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
-                      </svg>
+                      <AndroidLogoIcon size={20} weight="duotone" />
                       For Android
                     </a>
                     <a
@@ -380,9 +366,7 @@ export default function Home() {
                       className="flex items-center justify-center gap-2 font-raleway font-bold text-[15px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                       style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", padding: "12px 28px", boxShadow: "0 4px 14px rgba(227,41,115,0.25)" }}
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                      </svg>
+                      <AppleLogoIcon size={20} weight="duotone" />
                       For Apple
                     </a>
                   </div>
@@ -408,7 +392,7 @@ export default function Home() {
               <h2 className="font-boorsok font-normal uppercase leading-tight animate-fade-in-up"
                 style={{
                   color: "#E32973",
-                  fontSize: "clamp(32px, 5vw, 48px)",
+                  fontSize: "clamp(32px, 5vw, 42px)",
                   WebkitTextStrokeWidth: "1.5px",
                   WebkitTextStrokeColor: "#FFF",
                   textShadow: "0px 2.64px 7.92px rgba(135,20,61,0.30)",
@@ -463,9 +447,7 @@ export default function Home() {
 
                     {/* Address with pin icon */}
                     <div className="flex items-start gap-2 mb-2">
-                      <svg className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#E32973" }} fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                      </svg>
+                      <MapPinIcon size={16} weight="duotone" className="mt-0.5 shrink-0" style={{ color: "#E32973" }} />
                       <span
                         className={`font-raleway font-bold${loc.addressNoWrap ? " whitespace-nowrap" : ""}`}
                         style={{ fontSize: "13px", fontWeight: 700, color: "#9F363A", lineHeight: "1.6" }}
@@ -476,9 +458,7 @@ export default function Home() {
 
                     {/* Phone with icon */}
                     <div className="flex items-center gap-2 mb-2">
-                      <svg className="w-4 h-4 shrink-0" style={{ color: "#E32973" }} fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                      </svg>
+                      <PhoneIcon size={16} weight="duotone" className="shrink-0" style={{ color: "#E32973" }} />
                       <a
                         href={loc.tel}
                         className="font-raleway font-bold"
@@ -490,9 +470,7 @@ export default function Home() {
 
                     {/* Hours */}
                     <div className="flex items-start gap-2 mb-5">
-                      <svg className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#E32973" }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <ClockIcon size={16} weight="duotone" className="mt-0.5 shrink-0" style={{ color: "#E32973" }} />
                       <div className="flex flex-col gap-0.5">
                         {loc.hours.map((h) => (
                           <span key={h} className="font-raleway font-bold" style={{ fontSize: "13px", color: "#9F363A", lineHeight: "1.5" }}>
@@ -509,9 +487,7 @@ export default function Home() {
                       className="mt-auto flex items-center justify-center gap-2 font-raleway font-bold text-[14px] uppercase tracking-wide py-3 rounded-full text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                       style={{ background: "linear-gradient(135deg, #E32973 0%, #C41254 100%)", color: "#F8FAFC", boxShadow: "0 4px 12px rgba(227,41,115,0.25)" }}
                     >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                      </svg>
+                      <MapPinIcon size={16} weight="duotone" />
                       Open In Maps
                     </a>
                   </div>
@@ -541,7 +517,7 @@ export default function Home() {
                 </span>
                 <p
                   className="font-boorsok font-normal uppercase"
-                  style={{ fontSize: "clamp(28px, 4vw, 38px)", color: "#bd1957", letterSpacing: "1px" }}
+                  style={{ fontSize: "clamp(28px, 4vw, 42px)", color: "#bd1957", letterSpacing: "1px" }}
                 >
                   Winners for{" "}
                   <strong style={{ color: "#bd1957", letterSpacing: "2px", fontWeight: 400 }}>
@@ -574,7 +550,7 @@ export default function Home() {
           <div className="max-w-[1100px] mx-auto mb-10 px-4 md:px-0 flex flex-col items-center gap-3">
             <h2
               className="font-boorsok font-normal text-brand uppercase text-center"
-              style={{ fontSize: "clamp(28px, 4vw, 38px)", lineHeight: "1.1" }}
+              style={{ fontSize: "clamp(28px, 4vw, 42px)", lineHeight: "1.1" }}
             >
               The Buzz About Our Brand
             </h2>

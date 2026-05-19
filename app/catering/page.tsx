@@ -488,9 +488,9 @@ export default function CateringPage() {
                   WebkitTextStrokeWidth: "0.60px",
                   WebkitTextStrokeColor: "#FFF",
                   fontFamily: "'Boorsok', cursive",
-                  fontSize: "24px",
+                  fontSize: "42px",
                   fontWeight: 400,
-                  lineHeight: "38.28px",
+                  lineHeight: "1.1",
                   textAlign: "center",
                 }}
               >
@@ -498,19 +498,16 @@ export default function CateringPage() {
               </p>
               <p className="inqui">• Order Inquiry •</p>
               <p
-                className="font-raleway text-[14px] leading-[1.7] mt-4 max-w-[640px] mx-auto"
+                className="font-raleway font-bold text-[16px] leading-[1.7] mt-4 max-w-[640px] mx-auto"
                 style={{ color: "#87143D" }}
               >
-                This request form is for custom cupcakes only. Available for pick up only at the Snellville location.
-                Custom cupcakes include custom colors, designs, fondant and edible toppers.
-                Choose from our <strong>Regular Gourmet (Jumbo size)</strong> and <strong>Mini (Bite size)</strong> cupcakes.
+                This request form is for custom cupcakes only. Available for pick up only at the Snellville location. Custom cupcakes include custom colors, designs, fondant and edible toppers. Choose from our Regular Gourmet (Jumbo size) and Mini (Bite size) cupcakes.
               </p>
               <p
-                className="font-raleway text-[14px] leading-[1.7] mt-2 max-w-[640px] mx-auto"
+                className="font-raleway font-bold text-[16px] leading-[1.7] mt-2 max-w-[640px] mx-auto"
                 style={{ color: "#87143D" }}
               >
-                Requests must be submitted a minimum of <strong>7 days</strong> prior to your requested pick up date.
-                You&apos;ll hear back from us within <strong>2–3 business days</strong> by email.
+                Requests must be submitted a minimum of 7 days prior to your requested pick up date. You&apos;ll hear back from us within 2–3 business days by email.
               </p>
             </div>
 

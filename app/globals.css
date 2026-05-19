@@ -138,7 +138,7 @@ body {
   -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: #FFF;
   font-family: 'Boorsok', cursive;
-  font-size: 36px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 400;
 }
@@ -146,10 +146,10 @@ body {
   color: #C41254;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Boorsok', cursive;
-  font-size: 36px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 400;
-  line-height: 34.8px;
+  line-height: 40px;
   text-shadow: 0px 2.4px 7.2px rgba(135, 20, 61, 0.40);
   -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: #FFF;
@@ -158,16 +158,16 @@ body {
   color: #A21245;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Boorsok', cursive;
-  font-size: 36px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 400;
-  line-height: 34.8px;
+  line-height: 40px;
   text-shadow: 0px 2.4px 7.2px rgba(135, 20, 61, 0.40);
   -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: #FFF;
 }
 @media (max-width: 768px) {
-  .hand, .made, .day { font-size: 24px; }
+  .hand, .made, .day { font-size: 30px; }
   .made, .day { line-height: normal; }
 }
 
@@ -179,10 +179,10 @@ body {
   -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: #FFF;
   font-family: 'Boorsok', cursive;
-  font-size: 30px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 400;
-  line-height: 34.8px;
+  line-height: 40px;
 }
 .for-every {
   color: #276477;
@@ -191,15 +191,15 @@ body {
   -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: #FFF;
   font-family: 'Boorsok', cursive;
-  font-size: 28.8px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 40px;
   text-transform: capitalize;
 }
 @media (max-width: 768px) {
-  .cate    { font-size: 24px; }
-  .for-every { font-size: 24px; }
+  .cate    { font-size: 30px; line-height: normal; }
+  .for-every { font-size: 30px; line-height: normal; }
 }
 
 /* ── Catering inquiry subtitle ── */
@@ -248,9 +248,9 @@ body {
 .app {
   color: #F96DAF;
   font-family: 'Boorsok', cursive;
-  font-size: 25px;
+  font-size: 42px;
   font-weight: 400;
-  line-height: 29px;
+  line-height: 40px;
   text-shadow: 0px 2px 6px rgba(242, 165, 196, 0.10);
   -webkit-text-stroke-width: 0.7px;
   -webkit-text-stroke-color: #FFF;
@@ -258,14 +258,15 @@ body {
 .appp {
   color: #F24291;
   font-family: 'Boorsok', cursive;
-  font-size: 25px;
+  font-size: 42px;
   font-weight: 400;
+  line-height: 40px;
   text-shadow: 0px 2px 6px rgba(242, 165, 196, 0.10);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #FFF;
 }
 @media (max-width: 768px) {
-  .app, .appp { font-size: 23px; line-height: 27px; }
+  .app, .appp { font-size: 30px; line-height: 34px; }
 }
 
 /* ── Playful animations ── */
