@@ -267,7 +267,7 @@ export default function AboutPage() {
                     lineHeight: "1.25",
                   }}
                 >
-                  Delicious Treats for<br />Every Occasion
+                  Delicious Treats for<br className="hidden md:inline" /> Every Occasion
                 </h2>
                 <p className="font-raleway font-bold text-[16px] leading-relaxed mb-4" style={{ color: "#87143D" }}>
                   Our menu changes daily, bringing you a rotating selection of gourmet cupcakes and creamy ice creams.
@@ -306,9 +306,9 @@ export default function AboutPage() {
               <div className="absolute inset-0 rounded-2xl" style={{ background: "#571D1F 100%" }} />
               <div className="relative z-10 max-w-[900px] mx-auto">
                   <h2
-                  className="font-boorsok uppercase leading-tight mb-6 whitespace-nowrap"
+                  className="font-boorsok uppercase leading-tight mb-6 md:whitespace-nowrap"
                   style={{
-                    fontSize: "clamp(22px, 3.5vw, 42px)",
+                    fontSize: "clamp(32px, 3.5vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135, 20, 61, 0.40)",
@@ -317,7 +317,7 @@ export default function AboutPage() {
                     lineHeight: "1.25",
                   }}
                 >
-                  Join to the Smallcakes Team
+                  Join to the<br className="md:hidden" /> Smallcakes Team
                 </h2>
                 <p className="font-raleway text-white text-[16px] font-bold leading-relaxed mb-8">
                   Love baking and making people smile? We&apos;re always looking for passionate, hardworking

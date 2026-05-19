@@ -87,6 +87,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -94,6 +95,7 @@ body {
   font-weight: 500;
   color: #87143D;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

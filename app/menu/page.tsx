@@ -112,7 +112,7 @@ function MenuItemCard({ item, nameColor = "#87143D" }: { item: FlatItem; nameCol
 
       {item.description && (
         <p
-          className="font-raleway text-[13px] leading-relaxed"
+          className="font-raleway font-bold text-[13px] leading-relaxed"
           style={{ color: "#87143D" }}
         >
           {item.description}

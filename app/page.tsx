@@ -51,11 +51,11 @@ export default function Home() {
               className="font-raleway capitalize mb-8 animate-fade-in-up delay-200"
               style={{
                 color: "#FDE6F2",
-                fontSize: "clamp(16px, 2.5vw, 22px)",
-                fontWeight: 800,
-                WebkitTextStrokeWidth: "0.5px",
+                fontSize: "clamp(18px, 2.5vw, 22px)",
+                fontWeight: 900,
+                WebkitTextStrokeWidth: "0.8px",
                 WebkitTextStrokeColor: "#FDE6F2",
-                textShadow: "0px 1px 4px rgba(253,230,242,0.4)",
+                textShadow: "0px 1px 6px rgba(253,230,242,0.5)",
               }}
             >
               Gourmet cupcakes &amp; small batch ice cream
@@ -186,8 +186,8 @@ export default function Home() {
                     <span className="appp block">Catering &amp; Custom Treats For Every Celebration</span>
                   </h2>
                   <p
-                    className="font-raleway text-white leading-relaxed max-w-[480px] md:max-w-[600px]"
-                    style={{ color: "#ffffff", fontWeight: 700, fontSize: "16px" }}
+                    className="font-raleway font-bold text-white leading-relaxed max-w-[480px] md:max-w-[600px]"
+                    style={{ color: "#ffffff", fontSize: "16px" }}
                   >
                     From corporate events to birthdays and weddings, our
                     homemade cupcakes and small-batch ice cream bring a touch
