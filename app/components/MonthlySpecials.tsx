@@ -85,8 +85,8 @@ export default function MonthlySpecials() {
   const SectionTitle = () => (
     <>
       <h2
-        className="font-boorsok font-normal text-[42px] text-brand uppercase text-center"
-        style={{ lineHeight: "29px", WebkitTextStrokeWidth: "1.2px", WebkitTextStrokeColor: "#E32973" }}
+        className="font-boorsok font-normal text-[32px] md:text-[42px] text-brand uppercase text-center"
+        style={{ lineHeight: "1.1", WebkitTextStrokeWidth: "1.2px", WebkitTextStrokeColor: "#E32973" }}
       >
         Monthly Specials
       </h2>

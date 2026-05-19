@@ -167,7 +167,7 @@ body {
   -webkit-text-stroke-color: #FFF;
 }
 @media (max-width: 768px) {
-  .hand, .made, .day { font-size: 30px; }
+  .hand, .made, .day { font-size: 28px; }
   .made, .day { line-height: normal; }
 }
 
@@ -198,8 +198,8 @@ body {
   text-transform: capitalize;
 }
 @media (max-width: 768px) {
-  .cate    { font-size: 30px; line-height: normal; }
-  .for-every { font-size: 30px; line-height: normal; }
+  .cate    { font-size: 32px; line-height: normal; }
+  .for-every { font-size: 32px; line-height: normal; }
 }
 
 /* ── Catering inquiry subtitle ── */
@@ -241,7 +241,7 @@ body {
   -webkit-text-stroke-color: #FFF;
 }
 @media (max-width: 768px) {
-  .follow, .social { font-size: 29px; }
+  .follow, .social { font-size: 32px; line-height: normal; }
 }
 
 /* ── App Download heading ── */
@@ -266,7 +266,7 @@ body {
   -webkit-text-stroke-color: #FFF;
 }
 @media (max-width: 768px) {
-  .app, .appp { font-size: 30px; line-height: 34px; }
+  .app, .appp { font-size: 26px; line-height: normal; }
 }
 
 /* ── Playful animations ── */

@@ -375,7 +375,7 @@ export default function ContactPage() {
                 <h2
                   className="font-boorsok uppercase relative z-10 -mt-3 mb-3"
                   style={{
-                    fontSize: "clamp(28px, 4vw, 42px)",
+                    fontSize: "clamp(22px, 4vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135,20,61,0.40)",

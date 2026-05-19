@@ -93,7 +93,7 @@ export default function AboutPage() {
                 <h2
                   className="font-boorsok uppercase relative z-10 -mt-4 mb-5"
                   style={{
-                    fontSize: "clamp(28px, 4vw, 42px)",
+                    fontSize: "clamp(32px, 4vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135, 20, 61, 0.40)",
@@ -258,7 +258,7 @@ export default function AboutPage() {
                 <h2
                   className="font-boorsok uppercase leading-tight mb-6"
                   style={{
-                    fontSize: "clamp(28px, 4vw, 42px)",
+                    fontSize: "clamp(32px, 4vw, 42px)",
                     color: "#E32973",
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     textShadow: "0px 2.64px 7.92px rgba(135, 20, 61, 0.40)",
@@ -358,7 +358,7 @@ export default function AboutPage() {
                 </span>
                 <p
                   className="font-boorsok font-normal uppercase"
-                  style={{ fontSize: "clamp(28px, 4vw, 42px)", color: "#bd1957", letterSpacing: "1px" }}
+                  style={{ fontSize: "clamp(32px, 4vw, 42px)", color: "#bd1957", letterSpacing: "1px" }}
                 >
                   Winners for{" "}
                   <strong style={{ color: "#bd1957", letterSpacing: "2px", fontWeight: 400 }}>

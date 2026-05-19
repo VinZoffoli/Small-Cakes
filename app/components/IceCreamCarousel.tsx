@@ -77,14 +77,14 @@ export default function IceCreamCarousel() {
   const SectionTitle = () => (
     <>
       <div className="flex items-center justify-center gap-4">
-        <Image src="/assets/icono_helado.webp" alt="" width={36} height={36} className="object-contain opacity-80" />
+        <Image src="/assets/icono_helado.webp" alt="" width={36} height={36} className="hidden md:block object-contain opacity-80" />
         <h2
-          className="font-boorsok font-normal text-[42px] text-brand uppercase"
-          style={{ lineHeight: "29px", WebkitTextStrokeWidth: "1.2px", WebkitTextStrokeColor: "#E32973" }}
+          className="font-boorsok font-normal text-[32px] md:text-[42px] text-brand uppercase text-center"
+          style={{ lineHeight: "1.1", WebkitTextStrokeWidth: "1.2px", WebkitTextStrokeColor: "#E32973" }}
         >
           Ice Cream
         </h2>
-        <Image src="/assets/icono_helado.webp" alt="" width={36} height={36} className="object-contain opacity-80" />
+        <Image src="/assets/icono_helado.webp" alt="" width={36} height={36} className="hidden md:block object-contain opacity-80" />
       </div>
       <div className="flex justify-center mt-2 mb-8">
         <img src="/assets/fondo_titulos.webp" alt="" style={{ height: "12px", width: "auto" }} />

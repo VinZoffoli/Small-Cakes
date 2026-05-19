@@ -109,17 +109,19 @@ export default function Home() {
         >
           <div className="max-w-[960px] mx-auto px-4 md:px-6">
             <div className="flex items-center justify-center gap-4 md:gap-6 mb-6 animate-fade-in-up">
-              <div className="flex flex-col items-center gap-2 flex-shrink-0">
+              <div className="hidden md:flex flex-col items-center gap-2 flex-shrink-0">
                 <div className="w-5 h-5 rounded-full bg-brand-dark animate-pulse" />
                 <div className="w-4 h-4 rounded-full border-2 border-brand" />
                 <div className="w-2.5 h-2.5 rounded-full bg-brand" />
               </div>
               <h2 className="text-center leading-tight">
-                <span className="hand">Handcrafted treats, </span><br/>
+                <span className="hand">Handcrafted treats, </span>
+                <br />
                 <span className="made">Made Fresh to </span>
+                <br className="md:hidden" />
                 <span className="day">Brighten Your Day</span>
               </h2>
-              <div className="flex flex-col items-center gap-2 flex-shrink-0">
+              <div className="hidden md:flex flex-col items-center gap-2 flex-shrink-0">
                 <div className="w-2.5 h-2.5 rounded-full border-2 border-brand" />
                 <div className="w-5 h-5 rounded-full border-2 border-brand-dark" />
                 <div className="w-2.5 h-2.5 rounded-full bg-brand-dark animate-pulse" />
@@ -195,45 +197,35 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Images — back overflows card top, front stays inside card */}
-                <div className="relative h-[300px] md:h-[440px]" style={{ overflow: "visible" }}>
-                  {/* Back image — pokes above the card top-right corner */}
+                {/* Images — single grid item, mobile + desktop variants inside */}
+                <div className="relative h-[260px] md:h-[500px] overflow-hidden md:overflow-visible">
+                  {/* Mobile: back */}
                   <div
-                    className="absolute rounded-2xl overflow-hidden shadow-2xl"
-                    style={{
-                      top: "-22px",
-                      right: "10px",
-                      width: "220px",
-                      transform: "rotate(7deg)",
-                      zIndex: 1,
-                    }}
+                    className="md:hidden absolute rounded-2xl overflow-hidden shadow-2xl"
+                    style={{ top: "15px", right: "calc(50% - 150px)", width: "145px", transform: "rotate(7deg)", zIndex: 1 }}
                   >
-                    <Image
-                      src="/assets/catering1.webp"
-                      alt="Catering cupcake display"
-                      width={220}
-                      height={270}
-                      className="w-full h-full object-cover"
-                    />
+                    <Image src="/assets/catering1.webp" alt="Catering cupcake display" width={145} height={176} className="w-full h-full object-cover" />
                   </div>
-                  {/* Front image — lower area, fully inside card bottom */}
+                  {/* Mobile: front */}
                   <div
-                    className="absolute rounded-2xl overflow-hidden shadow-2xl"
-                    style={{
-                      bottom: "12px",
-                      right: "55px",
-                      width: "260px",
-                      transform: "rotate(-6deg)",
-                      zIndex: 2,
-                    }}
+                    className="md:hidden absolute rounded-2xl overflow-hidden shadow-2xl"
+                    style={{ bottom: "15px", left: "calc(50% - 155px)", width: "165px", transform: "rotate(-6deg)", zIndex: 2 }}
                   >
-                    <Image
-                      src="/assets/catering2.webp"
-                      alt="Custom catering treats"
-                      width={260}
-                      height={295}
-                      className="w-full h-full object-cover"
-                    />
+                    <Image src="/assets/catering2.webp" alt="Custom catering treats" width={165} height={188} className="w-full h-full object-cover" />
+                  </div>
+                  {/* Desktop: back */}
+                  <div
+                    className="hidden md:block absolute rounded-2xl overflow-hidden shadow-2xl"
+                    style={{ top: "20px", right: "10px", width: "260px", transform: "rotate(6deg)", zIndex: 1 }}
+                  >
+                    <Image src="/assets/catering1.webp" alt="Catering cupcake display" width={260} height={316} className="w-full h-full object-cover" />
+                  </div>
+                  {/* Desktop: front */}
+                  <div
+                    className="hidden md:block absolute rounded-2xl overflow-hidden shadow-2xl"
+                    style={{ bottom: "20px", left: "10px", width: "290px", transform: "rotate(-5deg)", zIndex: 2 }}
+                  >
+                    <Image src="/assets/catering2.webp" alt="Custom catering treats" width={290} height={331} className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -327,8 +319,8 @@ export default function Home() {
                 {/* Text + buttons — second on mobile, left column on desktop */}
                 <div className="order-last md:order-first px-6 md:px-14 py-8 md:py-16 flex flex-col justify-center">
                   <h2 className="leading-snug mb-5">
-                    <span className="app block whitespace-nowrap">Download the App</span>
-                    <span className="appp block whitespace-nowrap">And Sweeten Your Day</span>
+                    <span className="app md:block">Download the App </span>
+                    <span className="appp md:block">And Sweeten Your Day</span>
                   </h2>
                   <p className="font-raleway text-white text-[16px] font-bold leading-relaxed mb-5 max-w-[420px]">
                     Don&#39;t wait any longer to enjoy all the benefits. Download our app today
@@ -517,7 +509,7 @@ export default function Home() {
                 </span>
                 <p
                   className="font-boorsok font-normal uppercase"
-                  style={{ fontSize: "clamp(28px, 4vw, 42px)", color: "#bd1957", letterSpacing: "1px" }}
+                  style={{ fontSize: "clamp(32px, 4vw, 42px)", color: "#bd1957", letterSpacing: "1px" }}
                 >
                   Winners for{" "}
                   <strong style={{ color: "#bd1957", letterSpacing: "2px", fontWeight: 400 }}>
@@ -550,7 +542,7 @@ export default function Home() {
           <div className="max-w-[1100px] mx-auto mb-10 px-4 md:px-0 flex flex-col items-center gap-3">
             <h2
               className="font-boorsok font-normal text-brand uppercase text-center"
-              style={{ fontSize: "clamp(28px, 4vw, 42px)", lineHeight: "1.1" }}
+              style={{ fontSize: "clamp(32px, 4vw, 42px)", lineHeight: "1.1" }}
             >
               The Buzz About Our Brand
             </h2>
