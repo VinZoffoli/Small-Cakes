@@ -48,11 +48,9 @@ export default function Home() {
               Home of the<br />Smallcakes Smash
             </h1>
             <p
-              className="font-raleway capitalize mb-8 animate-fade-in-up delay-200"
+              className="font-raleway font-black text-[18px] md:text-[22px] capitalize mb-8 animate-fade-in-up delay-200"
               style={{
                 color: "#FDE6F2",
-                fontSize: "clamp(18px, 2.5vw, 22px)",
-                fontWeight: 900,
                 WebkitTextStrokeWidth: "0.8px",
                 WebkitTextStrokeColor: "#FDE6F2",
                 textShadow: "0px 1px 6px rgba(253,230,242,0.5)",
