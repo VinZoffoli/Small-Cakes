@@ -18,6 +18,12 @@
     "react-hook-form": "^7.75.0",
     "zod": "^4.4.3"
   },
+  "browserslist": [
+    "chrome >= 93",
+    "safari >= 15",
+    "firefox >= 90",
+    "edge >= 93"
+  ],
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

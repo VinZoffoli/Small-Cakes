@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
-import MonthlySpecials from "./components/MonthlySpecials";
-import DailyCupcakesCarousel from "./components/DailyCupcakesCarousel";
-import IceCreamCarousel from "./components/IceCreamCarousel";
 import ScrollDownButton from "./components/ScrollDownButton";
-import VideoSlider from "./components/VideoSlider";
 import Image from "next/image";
 import Link from "next/link";
+
+const MonthlySpecials = dynamic(() => import("./components/MonthlySpecials"));
+const DailyCupcakesCarousel = dynamic(() => import("./components/DailyCupcakesCarousel"));
+const IceCreamCarousel = dynamic(() => import("./components/IceCreamCarousel"));
+const VideoSlider = dynamic(() => import("./components/VideoSlider"));
 
 const pressLogos = [
   { src: "/assets/client-1.webp", alt: "Press feature 1" },

@@ -132,7 +132,7 @@ export default function AboutPage() {
               <div className="flex gap-3 animate-fade-in-up" style={{ height: "380px" }}>
                 <div className="w-1/2 relative rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="/assets/about1.jpg"
+                    src="/assets/about1.webp"
                     alt="About 1"
                     className="absolute inset-0 scale-115 w-full h-full object-cover hover:scale-125 transition-transform duration-500"
                   />
